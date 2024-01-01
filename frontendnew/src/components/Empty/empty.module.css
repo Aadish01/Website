@@ -1,0 +1,27 @@
+.newmainContainer{
+    padding: 10px ;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-align: center;
+}
+.notfound{
+    color: var(--neutral-dark, #223263);
+    text-align: center;
+    /* Heading/H2 */
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%; /* 36px */
+    letter-spacing: 0.5px;
+}
+.hint{
+    padding: 20px;
+    font-size: 14px;
+    color: #9098B1;
+}
+.button{
+    font-size: 14px;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 20px;
+}

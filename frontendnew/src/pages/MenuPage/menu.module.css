@@ -1,0 +1,82 @@
+.maincontainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content{
+    overflow: hidden;
+    overflow-x:hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.header{
+    /* position: sticky;
+    top: 0; */
+
+    display: flex;
+    flex-direction: column;
+}
+.boxy{
+  background: white;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 0 2px rgba(0,0,0,0.3);
+
+}
+.cat{
+  max-width: 1200px;
+    border: none;
+    padding: 10px;
+    font-size: 12px; 
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  
+  .cat label {
+    cursor: pointer;
+  }
+  
+  .cat label span {
+    text-align: center;
+    padding: 4px;
+    display: block;
+  }
+  
+  .cat label input {
+    position: absolute;
+    display: none;
+    color: #40BFFF !important;
+  }
+
+  .cat label input + span{
+    background-color: white;
+    color: #40BFFF;
+    border-color: #40BFFF;
+    border-style: solid;
+    border-radius: 5px;
+}
+  
+  
+  /* This will declare how a selected input will look giving generic properties */
+  .cat input:checked + span {
+    color: white;
+    background-color: #40BFFF;
+}
+  

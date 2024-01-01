@@ -1,0 +1,54 @@
+.container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
+}
+.innerContent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.innerContainer{
+    display: flex;
+    background-color: #ffffff;
+    padding: 15px;
+
+}
+.SearchComponent{
+    flex: 1;
+    display: flex;
+    background-color: hsl(0, 0%, 93%);
+}
+.input{
+    flex: 1;
+    font-size: 18px;
+    padding: 5px 0 5px 15px;
+    border: none;
+  }
+.icon{
+    padding: 5px;
+    padding-right: 10px;    
+}
+
+.OrderButton{
+    margin-left: 15px;
+    font-size: 18px;
+}

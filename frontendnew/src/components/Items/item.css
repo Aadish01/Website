@@ -1,0 +1,90 @@
+.container{
+    padding: 20px;
+    max-width: 375px;
+    min-width: 300px;
+    border-radius: 5px;
+    border: 1px solid var(--neutral-light, #EBF0FF);
+    background: var(--background-white, #FFF);
+}
+.image{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+.ib{
+    padding: 16px;
+}
+
+.ib_NameDes{
+    display: flex;
+    width: 80%;
+    flex-basis: 80%;
+    flex-direction: column;
+    gap: 12px;
+}
+.ib_name{
+    font-size: 18px;
+    text-wrap: wrap;
+    font-weight: 200;
+}
+.ib_des{
+    color: #CC3434;
+    text-wrap: wrap;
+    font-size: 14px;
+}
+
+.ib_image{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+.ib_counter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+.ib_btn__container {
+    display: flex;
+    column-gap: 20px;
+}
+ 
+.ib_control__btn {
+    padding: 5px 10px;
+    cursor: pointer;
+
+}
+.select {
+    width: 90% !important;
+    font-family: fonty;
+    font-weight: 200;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+.more{
+    display: flex;
+    font-size: 12px;
+    gap: 15px;
+}
+.rating{
+    color: 	#ddb78a;
+    background-color: #65385a;
+    padding: 5px;
+    border-radius: 10px;
+}
+.cookTime{
+    color: #ddb78a;
+
+    background-color: #65385a;
+    padding: 5px;
+    border-radius: 10px;
+}
+.Order{
+    font-size: 18px;
+    font-family: fonty;
+    width: 100%;
+    padding: 5px;
+    margin-top: 20px;
+}

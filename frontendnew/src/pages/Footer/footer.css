@@ -1,0 +1,27 @@
+.footercontainerthis{
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px;
+    justify-content: space-evenly;
+    background-color: white;
+    text-align: center;
+}
+.footericon{
+    color:  #9098B1;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+.footericonactive, .footericon:hover{
+    color: #40BFFF ;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+.text{
+    font-size: 12px;
+}

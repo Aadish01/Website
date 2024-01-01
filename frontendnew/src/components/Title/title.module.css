@@ -1,0 +1,15 @@
+.boxy{
+    display: flex;
+    justify-content: center;
+}
+.title{
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px 15px 0px 15px;
+    color: var(--neutral-dark, #223263);
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 24px */
+letter-spacing: 0.08px;
+}

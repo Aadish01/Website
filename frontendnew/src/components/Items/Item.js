@@ -4,7 +4,7 @@ import { AiFillStar } from 'react-icons/ai'
 import { FaClock } from 'react-icons/fa'
 import Price from '../Price/Price'
 import { useCart } from '../../hooks/useCart'
-
+import toast from 'react-hot-toast'
 
 const Item = ({Food}) => {
 
@@ -48,7 +48,8 @@ const Item = ({Food}) => {
                         <Price price={Food.FoodPrice} /> ( {Food.FoodType} )
                     </div>
                 </div>
-                <button className="Order" onClick={() => addToCart(Food,counter)}>
+                <button className="Order" onClick={() => {addToCart(Food,counter);
+                    toast.success('Successfully Added!',{style:{padding:"5px", fontSize:'16px'}}) }}>
                     Order
                 </button>
             </div>

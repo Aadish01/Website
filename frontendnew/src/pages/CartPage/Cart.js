@@ -11,6 +11,7 @@ import { getRestaurant } from "../../services/RestaurantService";
 import Header from "../../components/Header/Header";
 import NotFound from "../../mainpages/NotFoundPage/NotFound";
 import Empty from "../../components/Empty/Empty";
+import toast from "react-hot-toast";
 
 const initialState = {
     Restaurant: [],
@@ -35,6 +36,10 @@ export function Cart (){
         getRestaurant( name, id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}))
     },[name,id]
     )
+    const fun = (id) => {
+        removeFromCart(id);
+        toast.error('Item Removed!',{style:{padding:"5px", fontSize:'16px'}});
+    }
 
     return(
         Restaurant ? 
@@ -60,7 +65,7 @@ export function Cart (){
                                         {item.food.FoodName}
                                     </div>
                                     <div className={classes.remove} >
-                                        <MdDeleteOutline onClick={() => removeFromCart(item.food.FoodId)} />
+                                        <MdDeleteOutline onClick={() =>fun(item.food.FoodId)} />
                                     </div>
                                 </div>
                                 <div className={classes.anothercontainer}>
@@ -71,8 +76,7 @@ export function Cart (){
                                     <div className={classes.ctrlbuttons}>
                                         <button onClick={() => {
                                             item.quantity>1 ? changeQuantity(item, Number(item.quantity)-1)
-                                            : removeFromCart(item.food.FoodId) }}>-</button>
-
+                                            : fun(item.food.FoodId)  }}>-</button>
                                         <div className={classes.itemquantity}>
                                         {item.quantity}</div>
                                         

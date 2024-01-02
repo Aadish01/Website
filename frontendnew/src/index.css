@@ -1,7 +1,4 @@
-@font-face {
-  font-family: Fonty;
-  src: url(Jua-Regular.ttf);
-}
+@import url('https://fonts.googleapis.com/css?family=Poppins') ;
 *{
   -webkit-user-select: none;
   -webkit-touch-callout: none;
@@ -12,7 +9,7 @@
 }
 html{
   font-size: 18px;
-  font-family: Fonty;
+  font-family: 'Poppins';
   background-color: #eeeeee;
   overflow: none;
 }

@@ -26,7 +26,7 @@ const reducer = (state, action) => {
         }
     }
 
-export function Cart (){
+export default function Cart (){
     const [state, dispatch] = useReducer(reducer, initialState);
     const { Restaurant } = state;
     const { name, id } = useParams();

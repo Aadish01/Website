@@ -3,7 +3,7 @@ import classes from './mainhome.module.css'
 import Navbar from "../Navbar/Navbar";
 import { MdOutlineArrowDropDown } from "react-icons/md";
 
-const MainHome = () => {
+export default function MainHome(){
     return (
         <div className={classes.container}>
             <div className={classes.header}>
@@ -61,4 +61,3 @@ const MainHome = () => {
         </div>
     )
 }
-export default MainHome;

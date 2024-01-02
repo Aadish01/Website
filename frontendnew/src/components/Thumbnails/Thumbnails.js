@@ -20,7 +20,7 @@ const Thumbnails = ({foods, title}) => {
                     <Link to= {'/'+name+'/'+id+'/Foods/'+food.FoodId} key={food.FoodId} className={classes.container}>
                         <div className={classes.boxx}>
                             <div className={classes.imagebox}>
-                            <img className={classes.image} src={'/foods/'+food.FoodImageLink} alt='' />
+                            <img className={classes.image} src={'/foods/'+food.FoodImageLink} alt='' loading='lazy' />
                             </div>
                             </div>
                                 <div className={classes.content}>

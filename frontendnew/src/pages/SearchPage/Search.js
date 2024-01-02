@@ -30,7 +30,7 @@ const reducer = (state,action) => {
     }
 }
 
-export const Search = () => {
+export default function Search () {
     const [state, dispatch] = useReducer(reducer, initialState);
     const {foods, Adds, Restaurant} = state ;
     const { name, id, searchTerm } = useParams();

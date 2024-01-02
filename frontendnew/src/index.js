@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {HashRouter} from 'react-router-dom';
+import {BrowserRouter, HashRouter} from 'react-router-dom';
 import CartProvider from './hooks/useCart';
 import './axiosConfig';
 import { Toaster } from 'react-hot-toast';
@@ -11,13 +10,11 @@ import { Toaster } from 'react-hot-toast';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
     <CartProvider>
       <App />
       <Toaster position="top-right" />
     </CartProvider>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );
-
-reportWebVitals();

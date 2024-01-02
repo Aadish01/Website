@@ -33,7 +33,7 @@ const reducer = (state, action) => {
     }
 }
 
-export function Menu (){
+export default function Menu (){
     const [state, dispatch] = useReducer(reducer, initialState);
     const { TagsAll, Restaurant,MenuAll } = state;
 

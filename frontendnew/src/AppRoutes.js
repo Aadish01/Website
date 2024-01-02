@@ -1,28 +1,29 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import MainHome from "./mainpages/MainHome/MainHome";
-import NotFound from "./mainpages/NotFoundPage/NotFound";
-import Restaurant from "./mainpages/RestaurantPage/Restaurant";
-import { Home } from "./pages/Home/Home";
-import { Cart } from "./pages/CartPage/Cart";
-import { Menu } from "./pages/MenuPage/Menu";
-import Food from "./pages/FoodPage/Food";
-import { Search } from "./pages/SearchPage/Search";
+import React,{lazy, Suspense} from "react";
+import { Navigate, Route, Routes} from "react-router-dom";
+const MainHome = lazy(() => import("./mainpages/MainHome/MainHome"));
+const NotFound = lazy(() => import("./mainpages/NotFoundPage/NotFound"));
+const Restaurant = lazy(() => import("./mainpages/RestaurantPage/Restaurant"));
+const Home = lazy(() => import("./pages/Home/Home"));
+const Cart = lazy(() => import("./pages/CartPage/Cart"));
+const Menu = lazy(() => import("./pages/MenuPage/Menu"));
+const Food  = lazy(() => import("./pages/FoodPage/Food"));
+const Search = lazy(() => import("./pages/SearchPage/Search"));
 
 const AppRoutes = () => {
 
     return (
         <Routes>
-            <Route path="/" element={<MainHome />} />
-            <Route path="/Restaurants" element={<Restaurant />} />
-            <Route path="/Restaurants/:search" element={<Restaurant />} />
-            <Route path="/:name/*" element={<NotFound />} />
-            <Route path="/:name/:id" element={<Home />} />
-            <Route path="/:name/:id/Cart" element={<Cart />} />
-            <Route path="/:name/:id/Menu/:tag" element={<Menu />} />
-            <Route path="/:name/:id/Foods/:foodid" element={<Food />} />
-            <Route path="/:name/:id/Search" element={<Search />} />
-            <Route path="/:name/:id/Search/:searchTerm" element={<Search />} />
+            <Route path="/" element={<Navigate to='/Home' replace />} />
+            <Route path="/Home" element={<Suspense fallback={<>...</>}><MainHome /></Suspense>} />
+            <Route path="/Restaurants" element={<Suspense fallback={<>...</>}><Restaurant /></Suspense>} />
+            <Route path="/Restaurants/:search" element={<Suspense fallback={<>...</>}><Restaurant /></Suspense>} />
+            <Route path="/:name/*" element={<Suspense fallback={<>...</>}><NotFound /></Suspense>} />
+            <Route path="/:name/:id" element={<Suspense fallback={<>...</>}><Home /></Suspense>} />
+            <Route path="/:name/:id/Cart" element={<Suspense fallback={<>...</>}><Cart /></Suspense>} />
+            <Route path="/:name/:id/Menu/:tag" element={<Suspense fallback={<>...</>}><Menu /></Suspense>} />
+            <Route path="/:name/:id/Foods/:foodid" element={<Suspense fallback={<>...</>}><Food /></Suspense>} />
+            <Route path="/:name/:id/Search" element={<Suspense fallback={<>...</>}><Search /></Suspense>} />
+            <Route path="/:name/:id/Search/:searchTerm" element={<Suspense fallback={<>...</>}><Search /></Suspense>} />
         </Routes>
     )
 }

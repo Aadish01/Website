@@ -17,7 +17,7 @@ const Item = ({Food}) => {
     return(
         <div className="container">
             <div className="imageBox">
-                <img className="image" src={'/foods/'+Food.FoodImageLink} alt={Food.FoodName} width="100%" height="100%" />
+                <img className="image" src={'/foods/'+Food.FoodImageLink} alt={Food.FoodName}/>
             </div>
             <div className="ib">
                 <div className="ib_NameDes">

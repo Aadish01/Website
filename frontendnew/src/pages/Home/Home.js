@@ -36,7 +36,7 @@ const reducer = (state, action) => {
     }
 }
 
-export const Home = () => {
+export default function Home(){
     const [state, dispatch] = useReducer(reducer, initialState);
     const { Restaurant, CategoriesAll, BestSellers, Adds } = state;
     const { name, id } = useParams();

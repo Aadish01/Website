@@ -12,7 +12,7 @@ function Restaurant() {
         getAllRestaurants().then(SetRestaurants);
     },[]);
     function getRandomInt() {
-        return Math.floor(Math.random()+0.5)+1;
+        return Math.floor(Math.random()+0.55)+1;
       }
     return (
         <div className={classes.container}>
@@ -20,12 +20,6 @@ function Restaurant() {
                 <Navbar />
             </div>
             <div className={classes.content}>
-                <div className={classes.description}>
-                    <img src="/additional/mainhome6.jpg" className={classes.image} alt=""></img>
-                    <div className={classes.innercontent}>
-                        <div className={classes.title}>Out Clients</div>
-                    </div>
-                </div>
                 <div className={classes.description}>
                 {
                     RestaurantsAll.map(Restaurant => 

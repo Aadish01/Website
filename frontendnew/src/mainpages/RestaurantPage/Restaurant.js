@@ -3,7 +3,6 @@ import classes from './restaurant.module.css';
 import Navbar from "../Navbar/Navbar";
 import { getAllRestaurants } from "../../services/RestaurantService";
 import { Link } from "react-router-dom";
-import { BiMap } from "react-icons/bi";
 
 
 function Restaurant() {
@@ -31,7 +30,7 @@ function Restaurant() {
                                 </Link>
                                 <div className={classes.aa}>
                                     <div className={classes.aaa} onClick={() => window.open(Restaurant.RestaurantAddressLink, "_blank")}> 
-                                        <BiMap className={classes.map} style={{color: 'red', fontSize: '30px'}}/>
+                                        <img src="/icons/map.svg" alt="" className={classes.map} width='30px' height='30px' />
                                     </div>
                                     <div className={classes.aab}>
                                         <div className={classes.a_name}>{Restaurant.RestaurantName}</div>

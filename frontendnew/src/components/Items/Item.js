@@ -1,7 +1,5 @@
 import './item.css'
 import { useState} from "react"
-import { AiFillStar } from 'react-icons/ai'
-import { FaClock } from 'react-icons/fa'
 import Price from '../Price/Price'
 import { useCart } from '../../hooks/useCart'
 import toast from 'react-hot-toast'
@@ -30,10 +28,10 @@ const Item = ({Food}) => {
                     </div>
                     <div className="more"> 
                         <div className="rating">
-                            <div><AiFillStar /> {Food.FoodRating}</div>
+                            <div><img src='/icons/star.svg' alt='' width='15px' height='15px'  />  {Food.FoodRating}</div>
                         </div>
                         <div className="cookTime">
-                            <div><FaClock /> {Food.CookTime} min.</div>
+                            <div><img src='/icons/clock.svg' alt='' width='15px' height='15px' />  {Food.CookTime} min.</div>
                         </div>
                     </div>
                     <div className="ib_counter">

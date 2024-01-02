@@ -79,6 +79,8 @@
 .map{
     width: fit-content;
     align-self: center;
+    color: red;
+    font-size: 30px;
 }
 .aab{
     flex: 1;

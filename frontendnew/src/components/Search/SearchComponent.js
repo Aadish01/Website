@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import classes from './search.module.css';
-import { FaSearch } from 'react-icons/fa'
 
 
 export default function SearchComponent() {
@@ -29,7 +28,7 @@ export default function SearchComponent() {
         value={term}
       />
       <button onClick={search} className={classes.containerButton}>  
-        <FaSearch />                      
+        <img src='/icons/search.svg' alt='' width='25px' height='25px'  />
       </button>
       </div>
     </div>

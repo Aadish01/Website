@@ -1,7 +1,5 @@
 import classes from './thumbnails.module.css'
 import Price from "../Price/Price";
-import { AiFillStar } from 'react-icons/ai'
-import { FaClock } from 'react-icons/fa'
 import { Link, useParams } from "react-router-dom";
 import Empty from '../Empty/Empty';
 
@@ -30,10 +28,10 @@ const Thumbnails = ({foods, title}) => {
                                     {/* <div className={classes.des}>{food.FoodDescription}</div> */}
                                     <div className={classes.more}> 
                                     <div className={classes.rating}>
-                                        <div><AiFillStar /> {food.FoodRating}</div>
+                                        <div><img src='/icons/star.svg' alt='' width='15px' height='15px'  /> {food.FoodRating}</div>
                                     </div>
                                     <div className={classes.cookTime}>
-                                        <div><FaClock /> {food.CookTime}</div>
+                                        <div><img src='/icons/clock.svg' alt='' width='15px' height='15px'  /> {food.CookTime}</div>
                                     </div>
                             </div>
                             <div className={classes.new}>

@@ -3,7 +3,6 @@ import classes from './food.module.css';
 import Footer from "../Footer/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import Item from "../../components/Items/Item";
-import { MdOutlineArrowBack } from "react-icons/md";
 import Header from "../../components/Header/Header";
 import { getRestaurant } from "../../services/RestaurantService";
 import NotFound from "../../mainpages/NotFoundPage/NotFound";
@@ -51,7 +50,7 @@ const Food = () => {
             <div className={classes.container}>
                 <Header restaurant={Restaurant}  />
                 <div className={classes.goback} onClick={() => navigate(-1)} >
-                    <MdOutlineArrowBack />
+                    <img src="/icons/arrowback.svg" alt="" height='20px' width='20px' />
                     <span> Back</span>
                 </div>
                 <div className={classes.content}>

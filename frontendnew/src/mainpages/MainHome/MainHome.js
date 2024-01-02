@@ -1,7 +1,6 @@
 import React from "react";
 import classes from './mainhome.module.css'
 import Navbar from "../Navbar/Navbar";
-import { MdOutlineArrowDropDown } from "react-icons/md";
 
 export default function MainHome(){
     return (
@@ -22,21 +21,21 @@ export default function MainHome(){
                     <div className={classes.innercontent}>
                         <div className={classes.paragraph}>Simply scan the QR code</div>
                     </div>
-                    <MdOutlineArrowDropDown className={classes.icon} />
+                    <img src="/icons/dropdown.svg" width='25px' height='25px' alt="" className={classes.icon} />
                 </div>
                 <div className={classes.carddescription}>
                     <img src="/additional/mainhome3.jpg" alt="" className={classes.cardimage}></img>
                     <div className={classes.innercontent}>
                         <div className={classes.paragraph}>Browse the Menu</div>
                     </div>
-                    <MdOutlineArrowDropDown className={classes.icon}  />
+                    <img src="/icons/dropdown.svg" width='25px' height='25px' alt="" className={classes.icon} />
                 </div>
                 <div className={classes.carddescription}>
                     <img src="/additional/mainhome4.jpg" alt="" className={classes.cardimage}></img>
                     <div className={classes.innercontent}>
                         <div className={classes.paragraph}>Secure Payments</div>
                     </div>
-                    <MdOutlineArrowDropDown className={classes.icon}  />
+                    <img src="/icons/dropdown.svg" width='25px' height='25px' alt="" className={classes.icon} />
                 </div>
                 <div className={classes.carddescription}>
                     <img src="/additional/mainhome5.jpg" alt="" className={classes.cardimage}></img>

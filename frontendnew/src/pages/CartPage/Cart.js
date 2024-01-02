@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 import { Link } from "react-router-dom";
 import Price from "../../components/Price/Price";
-import { MdDeleteOutline } from "react-icons/md";
 import Title from "../../components/Title/Title";
 import { getRestaurant } from "../../services/RestaurantService";
 import Header from "../../components/Header/Header";
@@ -65,7 +64,7 @@ export default function Cart (){
                                         {item.food.FoodName}
                                     </div>
                                     <div className={classes.remove} >
-                                        <MdDeleteOutline onClick={() =>fun(item.food.FoodId)} />
+                                        <img src="/icons/delete.svg" alt="" onClick={() =>fun(item.food.FoodId)} width='20px' height='20px'  />
                                     </div>
                                 </div>
                                 <div className={classes.anothercontainer}>

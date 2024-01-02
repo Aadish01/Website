@@ -19,7 +19,9 @@ const Thumbnails = ({foods, title}) => {
                 foods.map(food =>(
                     <Link to= {'/'+name+'/'+id+'/Foods/'+food.FoodId} key={food.FoodId} className={classes.container}>
                         <div className={classes.boxx}>
+                            <div className={classes.imagebox}>
                             <img className={classes.image} src={'/foods/'+food.FoodImageLink} alt='' />
+                            </div>
                             </div>
                                 <div className={classes.content}>
                                     <div className={classes.name}>

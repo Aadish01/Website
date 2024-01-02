@@ -56,10 +56,14 @@
 .boxx{
     display: flex;
 }
-
 .image{
-    height: 85px;
-    width: 85px;
+
+    max-height: 85px;
+    min-height: 85px;
+    min-width: 85px;
+    max-width: 85px;
+}
+.image{
     border-radius: 5px;
     width: 100%;
 }

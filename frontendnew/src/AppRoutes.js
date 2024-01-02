@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import MainHome from "./mainpages/HomePage/MainHome";
+import MainHome from "./mainpages/MainHome/MainHome";
 import NotFound from "./mainpages/NotFoundPage/NotFound";
 import Restaurant from "./mainpages/RestaurantPage/Restaurant";
 import { Home } from "./pages/Home/Home";
@@ -14,9 +14,8 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path="/" element={<MainHome />} />
-            <Route path="/home" element={<MainHome />} />
-            <Route path="/restaurants" element={<Restaurant />} />
-            <Route path="/restaurants/:search" element={<Restaurant />} />
+            <Route path="/Restaurants" element={<Restaurant />} />
+            <Route path="/Restaurants/:search" element={<Restaurant />} />
             <Route path="/:name/*" element={<NotFound />} />
             <Route path="/:name/:id" element={<Home />} />
             <Route path="/:name/:id/Cart" element={<Cart />} />

@@ -56,7 +56,6 @@ const MainHome = () => {
                             <a href="https://wa.me/+919131535564">WHATSAPP</a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

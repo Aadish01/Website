@@ -1,12 +1,28 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-const CartContext = createContext(null)
+const CartContext = createContext(null);
+const CART_KEY = 'cart';
+const EMPTY_CART = {
+    items: [],
+    totalPrice:0,
+    totalCount:0,
+}
+const isJson = (str) => {
+    try {
+        JSON.parse(str);
+    } catch (e) {
+        return false;
+    }
+    return true;
+}
 
 export default function CartProvider({children}) {
 
-    const [cartItems, setCartItems] = useState([]);
-    const [totalPrice, setTotalPrice] = useState(0);
-    const [totalCount, setTotalCount] = useState(0);
+    const initCart = getCartFromLocalStorage();
+
+    const [cartItems, setCartItems] = useState(initCart.items);
+    const [totalPrice, setTotalPrice] = useState(initCart.totalPrice);
+    const [totalCount, setTotalCount] = useState(initCart.totalCount);
 
     useEffect(() => {
 
@@ -15,7 +31,19 @@ export default function CartProvider({children}) {
         setTotalPrice(totalPrice);
         setTotalCount(totalCount);
 
+        localStorage.setItem(CART_KEY, JSON.stringify( {items : cartItems , totalPrice, totalCount} ));
+
     },[cartItems]);
+
+    function getCartFromLocalStorage(){
+        const storedCart = localStorage.getItem(CART_KEY);
+        if(storedCart && isJson(storedCart)){
+            return JSON.parse(storedCart)
+        }
+        else{
+            return EMPTY_CART ;
+        }
+    }
 
     const removeFromCart = (foodId) => {
         const filteredCartItem = cartItems.filter(item => item.food.FoodId !== foodId);

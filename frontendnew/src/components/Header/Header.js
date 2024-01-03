@@ -26,8 +26,8 @@ const Header= ({restaurant}) => {
                 <div className={classes.aac}>
                     {
                     open 
-                    ? <img src='/icons/expandless.svg' width='15px' height='15px' className={classes.icon} onClick={toggle} />
-                    : <img src='/icons/expandmore.svg' width='15px' height='15px' className={classes.icon} onClick={toggle} />
+                    ? <img src='/icons/expandless.svg' width='15px' height='15px' alt='' className={classes.icon} onClick={toggle} />
+                    : <img src='/icons/expandmore.svg' width='15px' height='15px' alt='' className={classes.icon} onClick={toggle} />
                     }
                 </div>
             </div>

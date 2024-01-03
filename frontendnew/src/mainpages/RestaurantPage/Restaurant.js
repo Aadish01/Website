@@ -22,7 +22,7 @@ function Restaurant() {
                 <div className={classes.description}>
                 {
                     RestaurantsAll.map(Restaurant => 
-                            <div key={Restaurant.RestaurantName} className={classes.card}>
+                            <div key={Restaurant.RestaurantId}className={classes.card}>
                                 <Link to={'/'+Restaurant.RestaurantName+'/'+Restaurant.RestaurantId}>
                                     <div className={classes.img}>
                                         <img src={Restaurant.RestaurantImage!==''?'/restaurant/'+Restaurant.RestaurantImage : `/additional/mainrestaurant${getRandomInt()}.jpg`}alt="" width="100%"></img>

@@ -1,5 +1,5 @@
 .a {
-    padding: 10px ;
+    padding: 8px ;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -8,7 +8,7 @@
     flex:1;
     max-width: 1200px;
     display: flex;
-    row-gap: 10px;
+    row-gap: 8px;
     flex-direction: column;
 }
 .aa{
@@ -23,21 +23,27 @@
     font-size: 30px;
 }
 .map{
-    color: red;
     font-size: 30px;
     width: fit-content;
     align-self: center;
 }
 .aab{
     flex: 1;
+    padding-left: 8px;
     display: flex;
     flex-direction: column;
 }
 .a_name{
-    font-size: 22px;
+    font-size: 20px;
+    font-weight: bold;
 }
 .a_address{
-    font-size: 18px;
+    font-size: 16px;
+    font-weight:bolder;
+}
+.a_timing{
+    font-size: 14px;
+    font-weight: lighter;;
 }
 .a_description{
     padding-left: 10px;
@@ -47,13 +53,7 @@
 .aac{
     text-align: center;
     margin: auto;
-    padding: 10px;
+    padding: 8px;
 }
-.icon{
-    height: 25px;
-    width: 25px;
-    color: #9098B1    
-}
-
 
 

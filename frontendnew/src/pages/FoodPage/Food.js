@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import { useNavigate, useParams } from "react-router-dom";
 import Item from "../../components/Items/Item";
 import Header from "../../components/Header/Header";
-import { getRestaurant } from "../../services/RestaurantService";
+import { getRestaurantById } from "../../services/RestaurantService";
 import NotFound from "../../mainpages/NotFoundPage/NotFound";
 import { getByFoodId } from "../../services/MenuService";
 const initialState = {
@@ -33,7 +33,7 @@ const Food = () => {
 
     useEffect(() => {
         try{
-            getRestaurant( name, id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}));
+            getRestaurantById( id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}));
             setFlag(true);
         }
         catch(err){
@@ -58,7 +58,7 @@ const Food = () => {
                 </div>
                 <Footer name={name} />
             </div>
-        : <NotFound />
+        : <NotFound linkRoute={'/'+name+'/'+id+'/Menu/All'} linkText="Go back to Menu" message="NOT FOUND" />
     )
 }
 export default Food ;

@@ -6,7 +6,7 @@ import { useCart } from "../../hooks/useCart";
 import { Link } from "react-router-dom";
 import Price from "../../components/Price/Price";
 import Title from "../../components/Title/Title";
-import { getRestaurant } from "../../services/RestaurantService";
+import { getRestaurantById } from "../../services/RestaurantService";
 import Header from "../../components/Header/Header";
 import NotFound from "../../mainpages/NotFoundPage/NotFound";
 import Empty from "../../components/Empty/Empty";
@@ -32,7 +32,7 @@ export default function Cart (){
     const {cart, removeFromCart, changeQuantity} = useCart();
     
     useEffect(() => {
-        getRestaurant( name, id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}))
+        getRestaurantById( id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}))
     },[name,id]
     )
     const fun = (id) => {

@@ -22,30 +22,25 @@ function Restaurant() {
                 <div className={classes.description}>
                 {
                     RestaurantsAll.map(Restaurant => 
-                            <div key={Restaurant.RestaurantId}className={classes.card}>
-                                <Link to={'/'+Restaurant.RestaurantName+'/'+Restaurant.RestaurantId}>
+                            <div key={Restaurant._id}className={classes.card}>
+                                <Link to={'/u/'+Restaurant.restaurantName+'/'+Restaurant._id}>
                                     <div className={classes.img}>
-                                        <img src={Restaurant.RestaurantImage!==''?'/restaurant/'+Restaurant.RestaurantImage : `/additional/mainrestaurant${getRandomInt()}.jpg`}alt="" width="100%"></img>
+                                        <img src={`/additional/mainrestaurant${getRandomInt()}.jpg`} alt="" width="100%"></img>
                                     </div>
                                 </Link>
                                 <div className={classes.aa}>
-                                    <div className={classes.aaa} onClick={() => window.open(Restaurant.RestaurantAddressLink, "_blank")}> 
+                                    <div className={classes.aaa} onClick={() => window.open(Restaurant.addressLink, "_blank")}> 
                                         <img src="/icons/map.svg" alt="" className={classes.map} width='30px' height='30px' />
                                     </div>
                                     <div className={classes.aab}>
-                                        <div className={classes.a_name}>{Restaurant.RestaurantName}</div>
-                                        <div className={classes.a_address}>{Restaurant.RestaurantAddress}</div>
+                                        <div className={classes.a_name}>{Restaurant.restaurantName}</div>
+                                        <div className={classes.a_address}>{Restaurant.address}</div>
                                     </div>
                                 </div>
-                                <div className={classes.a_description}>{Restaurant.RestaurantDes}</div>
-                                <div className={classes.a_description}>Contact: 
-                                {
-                                    Restaurant.ContactNumber.map(number => 
-                                        <div className={classes.contact}> {number} </div>
-                                        )
-                                }
+                                <div className={classes.a_description}>{Restaurant.description}</div>
+                                <div className={classes.a_description}>Contact: {Restaurant.contact}
                                 </div>
-                                <div className={classes.a_description}>Timings : {Restaurant.OpeningTime} : {Restaurant.ClosingTime}
+                                <div className={classes.a_description}>Timings : {Restaurant.openingTime} : {Restaurant.closingTime}
                                 </div>
                             </div>
                     )

@@ -37,10 +37,11 @@ const Add = ({adds}) => {
       >
         {adds.map((link, index) => (
           <div
+            id={link._id}
             className={classes.slide}
             key={index}
           >
-            <img src={'/adds/'+link} alt='img' width="100% " height="100%"></img>
+            <img src={link.image} alt='img' width="100% " height="100%"></img>
           </div>
         ))}
       </div>

@@ -2,15 +2,18 @@ import React from "react";
 import classes from './notfound.module.css'
 import { Link } from "react-router-dom";
 
-export default function NotFound(){
+export default function NotFound({linkRoute, linkText, message}){
     return(
         <div className={classes.container}>
-            <div className={classes.text}>PAGE NOT FOUND</div>
-            <img alt="" src="/icons/404.svg" height='250px' width='250px' className={classes.image} />
-            <Link to={'/Home'}  className={classes.container}>
+            <div className={classes.text}>{message}</div>
+            <Link to={linkRoute}  className={classes.container}>
+                {
+                linkText ?
                 <button  className={classes.button}>
-                    Back To Home
+                    {linkText}
                 </button>
+                : <></>
+                }
             </Link>
         </div>
     )

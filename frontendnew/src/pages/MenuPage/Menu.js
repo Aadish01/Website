@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 import { useParams } from "react-router-dom";
 import { getAllCategories} from "../../services/MenuService";
 import TagsComponent from "../../components/Tags/TagsComponent";
-import { getRestaurant } from "../../services/RestaurantService";
+import { getRestaurantById } from "../../services/RestaurantService";
 import Header from "../../components/Header/Header";
 import { getAllByTag } from "../../services/MenuService";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
@@ -51,7 +51,7 @@ export default function Menu (){
         
     useEffect(() => {
         try{
-            getRestaurant( name, id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}));
+            getRestaurantById( id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}));
             setflag(true);
         }
         catch(err){
@@ -126,7 +126,7 @@ export default function Menu (){
             </div>
             <Footer />
         </div>
-        : <NotFound />
+        : <NotFound linkRoute={'/Home'} linkText="Go to Home" message="SCAN AGAIN" />
     )
 }
 

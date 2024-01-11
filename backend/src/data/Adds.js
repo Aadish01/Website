@@ -1,22 +1,44 @@
 export const sample_adds = [
     {
         id:'1',
+        name:'',
         RestaurantId:'1',
-        Adds:[    
-            'add1.jpeg',
-            'add2.jpeg',
-            'add3.jpeg',
-        ]
+        image:'add1.jpeg',
     },
     {
         id:'2',
-        RestaurantId:'2',
-        Adds:[    
-            'add1.jpeg',
-            'add2.jpeg',
-            'add3.jpeg',
-            'add2,jpeg'
-        ]
+        name:'',
+        RestaurantId:'1',
+        image:'add2.jpeg',
+    },
+    {
+        id:'3',
+        name:'',
+        RestaurantId:'1',
+        image:'add3.jpeg',
+    },
+    {
+        id:'4',
+        name:'',
+        RestaurantId:'1',
+        image:'add3.jpeg',
+    },
+    {
+        id:'5',
+        name:'',
+        RestaurantId:'1',
+        image:'add2.jpeg',
+    },
+    {
+        id:'6',
+        name:'',
+        RestaurantId:'1',
+        image:'add1.jpeg',
+    },
+    {
+        id:'7',
+        name:'',
+        RestaurantId:'1',
+        image:'add3.jpeg',
     }
-
 ]

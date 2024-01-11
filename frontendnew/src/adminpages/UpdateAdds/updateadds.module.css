@@ -1,0 +1,45 @@
+.contain{
+  align-self: center;
+  display: flex;
+  max-width: 600px;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.fileuploadcontainer {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    gap:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  .fileuploadcontainerinput {
+    align-self: center;
+  }
+  .fileuploadcontainerbutton {
+    background-color: #40BFFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .fileuploadcontainerbutton:hover{
+    background-color: #40BFFF;
+  }
+  
+  .fileuploadcontainerh2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .remove{
+    padding:10px;
+    background-color: lightcoral ;
+    color: white;
+  }

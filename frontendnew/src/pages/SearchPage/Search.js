@@ -5,11 +5,12 @@ import { useParams } from "react-router-dom";
 import SearchComponent from "../../components/Search/SearchComponent";
 import { getBestSellers, getByName } from "../../services/MenuService";
 import Add from "../../components/Add/Add";
-import { getAdds } from "../../services/AddService";
+import { getAllAdds } from "../../services/AddService";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
 import BestSeller from "../../components/BestSeller/BestSeller";
-import { getRestaurant } from "../../services/RestaurantService";
+import { getRestaurantById } from "../../services/RestaurantService";
 import Header from "../../components/Header/Header";
+import NotFound from "../../mainpages/NotFoundPage/NotFound";
 
 const initialState = {
     Adds: [],
@@ -40,14 +41,14 @@ export default function Search () {
     
     useEffect( () => {
     try{
-        getRestaurant( name,id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}));
+        getRestaurantById( id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}));
         setflag(true);
     }
     catch(e){
         console.log("BAD URL"+ e)
     }
     if(flag){
-        getAdds( id ).then(Adds => dispatch({type:'ADDS_LOADED', payload: Adds}));
+        getAllAdds( id ).then(Adds => dispatch({type:'ADDS_LOADED', payload: Adds}));
         if(searchTerm) {
             change(false);
             getByName(id,searchTerm).then(foods => dispatch({type:'FOODS_LOADED', payload: foods}));
@@ -60,6 +61,7 @@ export default function Search () {
     }, [name,id,flag,searchTerm]);
 
     return (
+        Restaurant ?
         <div className={classes.container}>
             <div className={classes.content}>
                 <Header restaurant={Restaurant} />
@@ -73,5 +75,6 @@ export default function Search () {
             </div>
             <Footer name={name}/>
         </div>
+        : <NotFound linkRoute={'/Home'} linkText="Go to Home" message="SCAN AGAIN" />
     )
 }

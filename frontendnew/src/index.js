@@ -7,16 +7,24 @@ import CartProvider from './hooks/useCart';
 import { LoadingProvider } from './hooks/useLoading';
 import './axiosConfig';
 import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './hooks/useAdmin';
+import { UserAuthProvider } from './hooks/useUser';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <LoadingProvider>
-        <CartProvider>
-          <App />
-          <Toaster position="top-right" />
-        </CartProvider>
+
+        <AuthProvider>
+          <UserAuthProvider>
+            <CartProvider>
+              <App />
+              <Toaster position="top-right" />
+            </CartProvider>
+            </UserAuthProvider>
+        </AuthProvider>
+
       </LoadingProvider>
     </BrowserRouter>
   </React.StrictMode>

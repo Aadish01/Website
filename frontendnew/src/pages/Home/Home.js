@@ -1,12 +1,12 @@
 import React, { useEffect, useReducer, useState } from "react";
-import { getRestaurant } from "../../services/RestaurantService";
+import { getRestaurantById } from "../../services/RestaurantService";
 import { useParams } from "react-router-dom";
 import classes from './home.module.css'
 import NotFound from "../../mainpages/NotFoundPage/NotFound";
 import Footer from "../Footer/Footer";
 import Header from "../../components/Header/Header";
 import { getAllCategories, getBestSellers } from "../../services/MenuService";
-import { getAdds } from "../../services/AddService";
+import { getAllAdds } from "../../services/AddService";
 import TagsHome from "../../components/TagsHome/TagsHome";
 import BestSeller from "../../components/BestSeller/BestSeller";
 import Add from "../../components/Add/Add";
@@ -39,13 +39,13 @@ const reducer = (state, action) => {
 export default function Home(){
     const [state, dispatch] = useReducer(reducer, initialState);
     const { Restaurant, CategoriesAll, BestSellers, Adds } = state;
-    const { name, id } = useParams();
+    const { id } = useParams();
     const [flag, setflag] = useState(false);
 
     
     useEffect(() => {
         try{
-            getRestaurant( name, id ).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}))
+            getRestaurantById(id).then(Restaurant => dispatch({type:'RESTAURANT_LOADED', payload: Restaurant}))
             setflag(true);
         }
         catch(e){
@@ -54,11 +54,11 @@ export default function Home(){
         if(flag){
             getAllCategories( id ).then(CategoriesAll => dispatch({type: 'TAGS_LOADED', payload: CategoriesAll}))
 
-            getAdds( id ).then(Adds => dispatch({type:'ADDS_LOADED', payload: Adds}))
+            getAllAdds( id ).then(Adds => dispatch({type:'ADDS_LOADED', payload: Adds}))
     
             getBestSellers( id ).then(BestSellers => dispatch({type:'BESTSELLER_LOADED', payload: BestSellers}))
         }
-    },[name,id,flag]
+    },[id,flag]
     );
 
     return(
@@ -76,8 +76,8 @@ export default function Home(){
                     <Add adds={Adds} />
                 </div>
             </div>
-            <Footer name={name} />
+            <Footer />
         </div>
-        : <NotFound />
+        : <NotFound linkRoute="/Home" linkText="Go to Home" message="SCAN AGAIN" />
     )
 }

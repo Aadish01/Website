@@ -1,5 +1,5 @@
 .e{
-    padding:  15px;
+    padding:  10px;
     padding-bottom: 0px;
     box-shadow: none;
     display: flex;
@@ -15,16 +15,9 @@
 .e_heading{
     font-size: 16px;
 }
-.e_button{
-    font-family: Fonty;
-    align-self:flex-start;
-    padding-left: 0px;
-    border-style: none;
-    color: #CC3434;
-    background-color: #ffffff;
-}
+
 .e_contact{
-    padding: 5px;
+    padding: 3px; 
     margin-left: 10px;
     font-size: 16px;
     word-wrap:break-word;
@@ -32,10 +25,6 @@
 }
 .e_right{
     text-align: center;
-    color: black;
-}
-.e_mainSite{
-    color: black;
 }
 .e_mainSite:hover{
     cursor: pointer;

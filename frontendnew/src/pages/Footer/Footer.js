@@ -11,7 +11,7 @@ export default function Footer(){
     return (
         <nav className="footercontainerthis">
             <NavLink
-                to={'/'+name+'/'+id}
+                to={'/u/'+name+'/'+id}
                 className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
                 end >
                 <img src="/icons/home.svg" alt="" height='20px' width='20px' />
@@ -19,19 +19,19 @@ export default function Footer(){
             </NavLink>
             <NavLink
                 className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
-                to={'/'+name+'/'+id+'/Menu/All'} >
+                to={'/u/'+name+'/'+id+'/Menu/All'} >
                 <img src="/icons/menu.svg" alt="" height='20px' width='20px' />
                 <div className="text">Menu</div>
             </NavLink>
             <NavLink
                 className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
-                to={'/'+name+'/'+id+'/Search'} >
+                to={'/u/'+name+'/'+id+'/Search'} >
                 <img src="/icons/search.svg" alt="" height='20px' width='20px' />
                 <div className="text">Search</div>
             </NavLink>
             <NavLink
                 className={({ isActive }) => (isActive ? 'footericonactive' : 'footericon')}
-                to={'/'+name+'/'+id+'/Cart'} >
+                to={'/u/'+name+'/'+id+'/Cart'} >
                 <img src="/icons/cart.svg" alt="" height='20px' width='20px' />
                 <div className="text">Cart</div>   
             </NavLink>
